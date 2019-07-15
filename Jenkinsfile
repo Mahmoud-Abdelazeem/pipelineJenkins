@@ -15,8 +15,12 @@ pipeline {
         stage('Build') {
             steps {
                cmake CMakeLists.txt
-			   make 
-			   
+	
+		dir ('unittest')
+		{
+		   cmake -DGOOGLE_TEST=ON
+		}
+				   
             }
         }
 
