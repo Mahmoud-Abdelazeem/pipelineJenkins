@@ -14,7 +14,7 @@ pipeline {
 	stages {
         stage('Build') {
             steps {
-                cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=/home/mahmoud86/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
+                cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
                 cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]
                 
                 
@@ -27,12 +27,9 @@ pipeline {
             }
             steps {
                     
-                    
-
-				
 				dir("unittest")
 				{
-				 sh  "bash ./run_test.sh"
+				  sh  "bash ./run_test.sh"
  
 				}
             }
