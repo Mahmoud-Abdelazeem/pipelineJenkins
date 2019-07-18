@@ -1,5 +1,9 @@
 pipeline {
 	agent any
+	
+	triggers { 
+        cron('H 4/* 0 0 1-5') 
+    }
 
 	options {
 		buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -16,8 +20,6 @@ pipeline {
             steps {
                 cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
                 cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]
-                
-                
             }
         }
 
