@@ -31,7 +31,7 @@ pipeline {
             }
             steps {
                     
-                    sh  "./run_test.sh"
+                    
 
 				
 				dir("unittest")
