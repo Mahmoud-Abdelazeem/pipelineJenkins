@@ -30,7 +30,9 @@ pipeline {
                 environment name: 'RUN_TESTS', value: 'true'
             }
             steps {
-					
+                    
+                    sh  "./run_test.sh"
+
 				
 				dir("unittest")
 				{
