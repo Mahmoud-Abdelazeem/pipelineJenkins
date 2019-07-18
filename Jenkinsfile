@@ -3,7 +3,7 @@ pipeline {
 	
 	triggers { 
 	
-        pollSCM('H 1 * * *')
+        pollSCM('H/0 0 * * *')
     }
 
 	options {
