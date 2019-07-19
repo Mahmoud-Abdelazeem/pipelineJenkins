@@ -92,7 +92,7 @@ if(GOOGLE_TEST)
     message(STATUS "THE status of the test is ${mahtest}")
 
     target_link_libraries(mahtest
-       # ${OTHER_LIB_TEST}
+         ${OTHER_LIB_TEST}
         # ${BENCH_LIB_TEST}
         GTest::GTest GTest::Main
         )
@@ -105,7 +105,24 @@ if(GOOGLE_TEST)
     #  ... test 2
     #*************************************************
 
+    # then we need to add the tests.To do that, you have to first
+    #1- add the executable files
+    add_executable(hahtest
+        ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/hahtest.cpp)
+    message(STATUS "THE TYPE OF THE LIBRARY ${BENCHTOP_LIB_TEST} ")
 
+    #2- always do the link between the libraries. Otherwise, the CMake will never be able to define the target
+    message(STATUS "THE status of the second test is ${hahtest}")
+
+    target_link_libraries(hahtest
+         ${OTHER_LIB_TEST}
+        # ${BENCH_LIB_TEST}
+        GTest::GTest GTest::Main
+        )
+    #3- add the test itself
+    add_test(hahtest hahtest
+        )
+    message (STATUS "${hahtest} what is test1")
 
     #/********************************************//**
     #  ... test 3

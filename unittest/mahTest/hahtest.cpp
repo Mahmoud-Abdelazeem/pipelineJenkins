@@ -1,112 +1,54 @@
 #include <iostream>
-#include <math.h>
+#include <vector>
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
 
 using namespace std;
 
-double sqrroot (const double _x)
-
-{
-    double b = sqrt (_x);
-    if(b !=b) { // nan check
-        return -1;
-
-    } else {
-        return sqrt(_x);
-    }
-}
-
-TEST(sqrroottest, positivNos)
-{
-    ASSERT_EQ(6, sqrroot(36));
-
-}
-
-class MyClass{
-
-    string id;
+class stack {
+    vector<int> vstack = {};
 public:
-    MyClass(string _id) :id(_id){}
+    void push (int value) {vstack.push_back(value);}
 
-    string getId() {return id;}
+    int pop () {
+        if (vstack.size()>0) {
+            int value = vstack.back(); // returns reference to the last element of the container. calling back() on an empty container is undefined
+            vstack.pop_back(); // removes the last element of the container. calling pop_back() on an empty container is undefined
+            return value;
+
+        }else {
+            return -1;
+        }
+    }
+    int size() {
+        return vstack.size();
+    }
 };
 
-// every test consistes of thee steps
-TEST(TestCaseName,checkString){
+struct stackTest : public testing::Test  {
+    stack s1;
+    void SetUp(){
+        int value [] = {1,2,3,4,5,6,7,8,9};
+        for (auto &val : value) {
+            s1.push(val);
+        }
+    }
+    void TearDown() {}
+};
 
-    //1- arrange
-    MyClass mc("root");
-    //2- act
-    string value = mc.getId();
-    //3- assert
-    EXPECT_STREQ(value.c_str(),"root");
+TEST_F(stackTest, PopTest){
 
+    int lastpoppedvalue = 9;
+    while (lastpoppedvalue !=1){
+        ASSERT_EQ(s1.pop(),lastpoppedvalue--);
+    }
 }
+TEST_F(stackTest, sizeValidityTest){
 
-class classIncrement{
-
-    int basevalue;
-public:
-    classIncrement (int _bv): basevalue(_bv){}
-
-    void increment (int byvalue){
-        basevalue +=byvalue;
+    int val = s1.size();
+    for(val;val>0;val--){
+        ASSERT_NE(s1.pop(),-1);
     }
-
-    int getValue() {return basevalue;}
-};
-
-TEST(ClassTest, Incrementby_5){
-
-    // Arrange
-    classIncrement mc(100);
-
-    // Act
-    mc.increment(5);
-
-    // Assert
-    ASSERT_EQ(mc.getValue(), 105);
 }
-
-class myIncrementClass {
-    int basevalue;
-
-public:
-    myIncrementClass(int _bv) : basevalue(_bv) {}
-
-    void setIncrement( int byValue){
-        basevalue +=byValue;
-    }
-
-    int getValue() {
-        return basevalue;
-    }
-};
-
-struct myIncrementClassTest : public testing::Test {
-    myIncrementClass* mIc;
-    void SetuP()  {
-        cout<<"Alive"<<endl;
-        mIc =new myIncrementClass(100);
-
-    }
-    void TearDown() {
-        cout<< "dead"<<endl;
-        delete mIc;
-
-    }
-};
-
-TEST_F (myIncrementClassTest,increment_by_10)
-{
-    // Arrange, I have done it earlier
-
-    // Act
-    mIc->setIncrement(10);
-
-    //Assert
-    ASSERT_EQ(mIc->getValue(),110);
-}
-
-
 
