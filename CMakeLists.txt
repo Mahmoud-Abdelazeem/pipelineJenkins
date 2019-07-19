@@ -41,7 +41,7 @@ target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::Core Qt5::Gui)
 target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread)
 
 
-include(~/vcpkg/scripts/buildsystems/vcpkg.cmake)
+#include(~/vcpkg/scripts/buildsystems/vcpkg.cmake)
 
 set(sympath "${CMAKE_CURRENT_SOURCE_DIR}")
 set(filepath "${../../SymbolicLink2/}")
