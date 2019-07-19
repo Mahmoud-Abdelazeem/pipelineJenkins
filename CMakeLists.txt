@@ -40,6 +40,9 @@ target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::Core Qt5::Gui)
 # Link runTest with what we want to test, GTest and pthread library
 target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread)
 
+
+include(~/vcpkg/scripts/buildsystems/vcpkg.cmake)
+
 set(sympath "${CMAKE_CURRENT_SOURCE_DIR}")
 set(filepath "${../../SymbolicLink2/}")
 
@@ -60,7 +63,7 @@ set(folder "${CMAKE_CURRENT_SOURCE_DIR}/Test")
 
 # try to create the symbolic link and make a copy inside "Test", Take care that commands are executed concurrently as a pipeline
 execute_process(
-    COMMAND "${CMAKE_COMMAND}" "-E" "create_symlink" "../../symboliclink/" "${folder}"
+    COMMAND "${CMAKE_COMMAND}" "-E" "create_symlink" "~/symboliclink/" "${folder}"
     RESULT_VARIABLE result
     OUTPUT_VARIABLE output
     ERROR_VARIABLE error
