@@ -1,5 +1,7 @@
 #!/bin/bash
 
+make clean 
+
 cmake -DGOOGLE_TEST=ON
 
 make -j4 mahtest
