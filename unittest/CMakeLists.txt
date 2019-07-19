@@ -90,12 +90,12 @@ if(GOOGLE_TEST)
 
     #2- always do the link between the libraries. Otherwise, the CMake will never be able to define the target
     message(STATUS "THE status of the test is ${mahtest}")
-
     target_link_libraries(mahtest
-         ${OTHER_LIB_TEST}
+        ${OTHER_LIB_TEST}
         # ${BENCH_LIB_TEST}
         GTest::GTest GTest::Main
         )
+
     #3- add the test itself
     add_test(mahtest mahtest
         )
@@ -113,12 +113,12 @@ if(GOOGLE_TEST)
 
     #2- always do the link between the libraries. Otherwise, the CMake will never be able to define the target
     message(STATUS "THE status of the second test is ${hahtest}")
-
     target_link_libraries(hahtest
-         ${OTHER_LIB_TEST}
+        ${OTHER_LIB_TEST}
         # ${BENCH_LIB_TEST}
         GTest::GTest GTest::Main
         )
+
     #3- add the test itself
     add_test(hahtest hahtest
         )

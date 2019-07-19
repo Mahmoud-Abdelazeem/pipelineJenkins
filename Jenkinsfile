@@ -54,7 +54,7 @@ pipeline {
                 environment name: 'DEPLOY', value: 'true'
             }
             steps {
-                sh label: '', returnStatus: true, script: '''cp jenkinsexample ~
+                sh label: '', returnStatus: true, script: '''cp workplace/jenkinsexample ~
                 cp unittest/mahtest ~'''
             }
         }
