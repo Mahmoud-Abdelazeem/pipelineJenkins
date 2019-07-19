@@ -21,6 +21,7 @@ if(GOOGLE_TEST)
 
     # create a load file .cmake, and set the Gmock targets
     include(findGmock.cmake)
+    include(CTest)
 
     #find the required packages, threads and gtest
     find_package(Threads)
@@ -77,6 +78,10 @@ if(GOOGLE_TEST)
         PUBLIC ${DISTIMATIC_LIB_TEST}
         )
 
+    #/********************************************//**
+    #  ... test 1
+    #*************************************************
+
     #then we need to add the tests.To do that, you have to first
     #1- add the executable files
     add_executable(mahtest
@@ -87,14 +92,38 @@ if(GOOGLE_TEST)
     message(STATUS "THE status of the test is ${mahtest}")
 
     target_link_libraries(mahtest
-        ${OTHER_LIB_TEST}
+       # ${OTHER_LIB_TEST}
         # ${BENCH_LIB_TEST}
         GTest::GTest GTest::Main
         )
     #3- add the test itself
     add_test(mahtest mahtest
         )
-    message (STATUS "${mahtest} what is that")
+    message (STATUS "${mahtest} what is test1")
+
+    #/********************************************//**
+    #  ... test 2
+    #*************************************************
+
+    #then we need to add the tests.To do that, you have to first
+    #1- add the executable files
+    add_executable(hahtest
+        ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/hahtest.cpp)
+    message(STATUS "THE TYPE OF THE LIBRARY ${BENCHTOP_LIB_TEST} ")
+
+    #2- always do the link between the libraries. Otherwise, the CMake will never be able to define the target
+    message(STATUS "THE status of the test is ${hahtest}")
+
+    target_link_libraries(hahtest
+        ${OTHER_LIB_TEST}
+        # ${BENCH_LIB_TEST}
+        GTest::GTest GTest::Main
+        )
+    #3- add the test itself
+    add_test(hahtest hahtest
+        )
+    message (STATUS "${hahtest} what is test2")
+
 
 endif()
 
