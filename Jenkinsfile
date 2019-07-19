@@ -35,7 +35,14 @@ pipeline {
 				  sh  "bash ./run_test.sh"
  
 				}
+				
+        post {
+            always {
+                archive "target/**/*"
+                junit 'target/surefire-reports/*.xml'
             }
+            }
+          }
         }
 
         stage('Analyse') {
