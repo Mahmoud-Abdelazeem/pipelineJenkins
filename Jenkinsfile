@@ -43,7 +43,8 @@ pipeline {
                 environment name: 'RUN_ANALYSIS', value: 'true'
             }
             steps {
-                sh label: '', cppcheck --enable=all --inconclusive --xml --xml-version=2 graphal 2> cppcheck-resuil.xml
+                sh label: '', 'cppcheck --enable=all --inconclusive --xml --xml-version=2 graphal 2> cppcheck-resuil.xml'
+				publishCppcheck allowNoReport: true, ignoreBlankFiles: true, pattern: '**/cppcheck-result.xml'
                 
             }
         }
