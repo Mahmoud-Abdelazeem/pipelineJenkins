@@ -38,11 +38,6 @@ pipeline {
 				
           }
           
-           post {
-            always {
-                junit 'example-pipeline/unittest/*.xml'
-              }
-            }
         }
         
        
