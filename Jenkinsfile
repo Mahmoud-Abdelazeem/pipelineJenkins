@@ -40,7 +40,7 @@ pipeline {
           post {
             always {
                 sh "ln -s example-pipeline/unittest $WORKSPACE"
-                Junit ""
+                 
               }
             }
           
