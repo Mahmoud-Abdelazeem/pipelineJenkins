@@ -39,7 +39,7 @@ pipeline {
           
           post {
             always {
-                sh "ln -s example-pipeline/unittest/test-result.xml $WORKSPACE/unittest"
+                
                 junit "*test-result.xml"
               }
             }
