@@ -29,7 +29,6 @@ pipeline {
                 environment name: 'RUN_TESTS', value: 'true'
             }
             steps {
-                    
                 dir("unittest")
                 {
                     sh  "bash ./run_test.sh"
@@ -53,7 +52,6 @@ pipeline {
             steps {
                 sh label: '', returnStatus: true, script: 'cppcheck . --xml --language=c++ --suppressions-list=suppressions.txt 2> cppcheck-result.xml'
                 publishCppcheck allowNoReport: true, ignoreBlankFiles: true, pattern: '**/cppcheck-result.xml'
-                
             }
         }
 
