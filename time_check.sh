@@ -1,5 +1,7 @@
 #!/bin/bash
 
-cd ~/workspace/example-pipeline/
+ln -s example-pipeline/unittest/test-result.xml $WORKSPACE/unittest
+
+cd ~/workspace/example-pipeline/unittest
 
 touch *.xml
