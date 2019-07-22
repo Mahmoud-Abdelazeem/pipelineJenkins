@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd ~/workspace/example-pipeline/unittest/
+cd ~/workspace/example-pipeline/
 
 touch *.xml
