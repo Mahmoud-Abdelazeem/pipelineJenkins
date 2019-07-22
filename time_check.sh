@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /home/mahmoud86/Projects/pipelineJenkins/unittest/
+cd ~/Projects/pipelineJenkins/unittest/
 
 touch *.xml
