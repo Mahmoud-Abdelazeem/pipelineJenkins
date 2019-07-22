@@ -39,7 +39,7 @@ pipeline {
           
           post {
             always {
-                sh "ln -s example-pipeline/unittest $WORKSPACE"
+                sh "ln -s example-pipeline/unittest/test-result.xml $WORKSPACE"
                  
               }
             }
