@@ -38,8 +38,10 @@ pipeline {
           }
           
           post {
-            always {
+            success {
                 sh "bash ./time_check.sh"
+                junit "unitest/test-result.xml"
+
               }
             }
           
