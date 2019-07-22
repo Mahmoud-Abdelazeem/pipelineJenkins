@@ -6,4 +6,4 @@ cd ~/workspace/example-pipeline/unittest
 
 echo $PWD
  
-touch *.xml
+touch *test-result.xml
