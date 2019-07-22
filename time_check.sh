@@ -4,6 +4,6 @@ ln -s example-pipeline/unittest/test-result.xml $WORKSPACE/unittest
 
 cd ~/workspace/example-pipeline/unittest
 
- ${pwd}
-
+echo $PWD
+ 
 touch *.xml
