@@ -2,4 +2,4 @@
 
 cd /home/mahmoud86/Projects/pipelineJenkins/unittest/
 
-touch *.xml
+sudo touch *.xml
