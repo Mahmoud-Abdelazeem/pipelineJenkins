@@ -39,7 +39,7 @@ pipeline {
           
           post {
             always {
-                
+                sh "bash ./time_check.sh"
                 junit "*test-result.xml"
               }
             }
