@@ -33,7 +33,6 @@ pipeline {
 				dir("unittest")
 				{
 				  sh  "bash ./run_test.sh"
- 
 				}
           }
           
@@ -41,7 +40,6 @@ pipeline {
             failure {
                 sh "bash ./time_check.sh"
                 junit "*unittest/test-result.xml"
-
               }
             }
           
