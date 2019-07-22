@@ -35,13 +35,17 @@ pipeline {
 				  sh  "bash ./run_test.sh"
  
 				}
-				
           }
+          
+          post {
+            always {
+                junit 'example-pipeline/unittest/*.xml'
+              }
+            }
           
         }
         
        
-
         stage('Analyse') {
             when {
                 environment name: 'RUN_ANALYSIS', value: 'true'
