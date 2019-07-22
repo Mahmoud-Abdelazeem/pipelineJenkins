@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 cd example-pipeline/unittest/test-result.xml
 
