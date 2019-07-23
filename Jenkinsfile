@@ -49,7 +49,7 @@ pipeline{
                 environment name: 'RUN_ANALYSIS', value: 'true'
             }
             steps{
-                sh label: '', returnStatus: true, script: 'cppcheck . --xml --std=c++14 $WORKSPACE> cppcheck-result.xml'
+                sh label: '', returnStatus: true, script: 'cppcheck . --xml --force --std=c++14 $WORKSPACE> cppcheck-result.xml'
                 publishCppcheck allowNoReport: true, ignoreBlankFiles: true, pattern: '**/cppcheck-result.xml'
             }
         }
