@@ -24,7 +24,7 @@ pipeline{
             }
         }
 
-        stage('UnitTest'){
+        stage('Testing'){
             when{
                 environment name: 'RUN_TESTS', value: 'true'
             }

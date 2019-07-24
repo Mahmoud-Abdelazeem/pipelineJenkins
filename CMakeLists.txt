@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.10.2)
 
 project(unittesting)
 
-
 # Instruct CMake to run moc automatically when needed
 set(CMAKE_AUTOMOC ON)
 
@@ -40,7 +39,6 @@ target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::Core Qt5::Gui)
 # Link runTest with what we want to test, GTest and pthread library
 target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} pthread)
 
-
 #include(~/vcpkg/scripts/buildsystems/vcpkg.cmake)
 
 set(sympath "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -63,7 +61,7 @@ set(folder "${CMAKE_CURRENT_SOURCE_DIR}/Test")
 
 # try to create the symbolic link and make a copy inside "Test", Take care that commands are executed concurrently as a pipeline
 execute_process(
-    COMMAND "${CMAKE_COMMAND}" "-E" "create_symlink" "~/symboliclink/" "${folder}"
+    COMMAND "${CMAKE_COMMAND}" "-E" "create_symlink" " ../../symboliclink" "${folder}"
     RESULT_VARIABLE result
     OUTPUT_VARIABLE output
     ERROR_VARIABLE error
@@ -73,7 +71,6 @@ execute_process(
 message(STATUS "RESULT_VARIABLE ${result}")
 message(STATUS "OUTPUT_VARIABLE ${output}")
 message(STATUS "ERROR_VARIABLE ${error}")
-
 
 # check if the symbolic link has been created
 if(IS_SYMLINK "${folder}")
@@ -88,6 +85,3 @@ target_link_libraries(${PROJECT_NAME} gmock)
 
 #here we will add the first subdirectory(unitTesting)
 add_subdirectory(unittest)
-
-
-
