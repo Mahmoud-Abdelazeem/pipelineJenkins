@@ -4,9 +4,7 @@ make clean
 
 cmake -DGOOGLE_TEST=ON
 
-make -j4 mahtest
-
-make -j4 hahtest 
+make 
 
 ctest -C Debug
 

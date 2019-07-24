@@ -21,32 +21,32 @@ if(GOOGLE_TEST)
 
     # create a load file .cmake, and set the Gmock targets
     include(findGmock.cmake)
+
+    # include CTest, to run all the tests
     include(CTest)
 
-    #find the required packages, threads and gtest
+    # find the required packages, threads and gtest
     find_package(Threads)
     find_package(GTest REQUIRED)
 
     # find all Qt Packages
     find_package(Qt5Core CONFIG REQUIRED)
 
-    # Find the QtWidgets library
+    # find the QtWidgets library
     find_package(Qt5Widgets CONFIG REQUIRED)
 
     #get updated with the messages
     message(STATUS "Threads${Threads}")
     set(GOOGLETEST_VERSION 1.9.0)
 
-
     # set the MOC on
     set(CMAKE_AUTOMOC ON)
 
-    # in this step we will set all of our variables, "all of the Libraries"
+    # in this step, add all tests file
     set (BENCHTOP_SRC_TEST
         ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/mahtest.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/mahtest.h
         ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/hahtest.cpp
-
         )
 
     set (BENCHTOP_LIB_TEST
@@ -60,8 +60,9 @@ if(GOOGLE_TEST)
         #add  the Gmock files
         )
     #this library will be used, take care of dependicies!
-
     set (DISTIMATIC_LIB_TEST  benchtoptest)
+
+    #add the used libraray, STATIC Library
     add_library(${DISTIMATIC_LIB_TEST} STATIC ${BENCHTOP_SRC_TEST})
 
     # link between all libraries
@@ -70,23 +71,22 @@ if(GOOGLE_TEST)
         PUBLIC ${OTHER_LIB_TEST}
         GTest::GTest GTest::Main
         Qt5::Widgets Qt5::Core Qt5::Gui
-
         )
 
     target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${CODING_LIB_INCLUDE_DIRS})
 
     # target_include_directories?? ToDo In the future
 
-    set(BENCH_TEST_SRC
-        ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/mahtest.cpp
+    set (BENCH_TEST_SRC
+         ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/mahtest.cpp
         )
 
     set (BENCH_LIB_TEST benchtest)
     add_library(${BENCH_LIB_TEST} STATIC ${BENCH_TEST_SRC})
     target_link_libraries(${BENCH_LIB_TEST}
-        ${OTHER_LIB_TEST}
-        PUBLIC ${DISTIMATIC_LIB_TEST}
-        )
+                          ${OTHER_LIB_TEST}
+                          PUBLIC ${DISTIMATIC_LIB_TEST}
+                         )
 
     #/********************************************//**
     #  ... test 1
@@ -99,18 +99,14 @@ if(GOOGLE_TEST)
     message(STATUS "THE TYPE OF THE LIBRARY ${BENCHTOP_LIB_TEST} ")
 
     #2- always do the link between the libraries. Otherwise, the CMake will never be able to define the target
-    message(STATUS "THE status of the test is ${mahtest}")
+    message(STATUS "THE status of the FIRST test is ${mahtest}")
     target_link_libraries(mahtest
         ${OTHER_LIB_TEST}
         ${DISTIMATIC_LIB_TEST}
-        # GTest::GTest GTest::Main
-        #Qt5::Widgets Qt5::Core Qt5::Gui
-
-         )
+        )
 
     #3- add the test itself
-    add_test(mahtest mahtest
-        )
+    add_test(mahtest mahtest)
     message (STATUS "${mahtest} what is test1")
 
     #/********************************************//**
@@ -121,21 +117,17 @@ if(GOOGLE_TEST)
     #1- add the executable files
     add_executable(hahtest
         ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/hahtest.cpp)
-        message(STATUS "THE TYPE OF THE LIBRARY ${BENCHTOP_LIB_TEST} ")
+    message(STATUS "THE TYPE OF THE LIBRARY ${BENCHTOP_LIB_TEST} ")
 
     #2- always do the link between the libraries. Otherwise, the CMake will never be able to define the target
-    message(STATUS "THE status of the second test is ${hahtest}")
+    message(STATUS "THE status of the SECOND test is ${hahtest}")
     target_link_libraries(hahtest
         ${OTHER_LIB_TEST}
         ${DISTIMATIC_LIB_TEST}
-        #GTest::GTest GTest::Main
-        #Qt5::Widgets Qt5::Core Qt5::Gui
-
-         )
+        )
 
     #3- add the test itself
-    add_test(hahtest hahtest
-        )
+    add_test(hahtest hahtest)
     message (STATUS "${hahtest} what is test1")
 
     #/********************************************//**
