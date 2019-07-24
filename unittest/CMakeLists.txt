@@ -45,6 +45,8 @@ if(GOOGLE_TEST)
     set (BENCHTOP_SRC_TEST
         ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/mahtest.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/mahtest.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/hahtest.cpp
+
         )
 
     set (BENCHTOP_LIB_TEST
@@ -60,13 +62,15 @@ if(GOOGLE_TEST)
     #this library will be used, take care of dependicies!
 
     set (DISTIMATIC_LIB_TEST  benchtoptest)
-    add_library(${DISTIMATIC_LIB_TEST} SHARED ${BENCHTOP_SRC_TEST})
+    add_library(${DISTIMATIC_LIB_TEST} STATIC ${BENCHTOP_SRC_TEST})
 
     # link between all libraries
     target_link_libraries(${DISTIMATIC_LIB_TEST}
         PUBLIC ${BENCHTOP_LIB_TEST}
         PUBLIC ${OTHER_LIB_TEST}
         GTest::GTest GTest::Main
+        Qt5::Widgets Qt5::Core Qt5::Gui
+
         )
 
     target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${CODING_LIB_INCLUDE_DIRS})
@@ -78,7 +82,7 @@ if(GOOGLE_TEST)
         )
 
     set (BENCH_LIB_TEST benchtest)
-    add_library(${BENCH_LIB_TEST} SHARED ${BENCH_TEST_SRC})
+    add_library(${BENCH_LIB_TEST} STATIC ${BENCH_TEST_SRC})
     target_link_libraries(${BENCH_LIB_TEST}
         ${OTHER_LIB_TEST}
         PUBLIC ${DISTIMATIC_LIB_TEST}
@@ -98,10 +102,11 @@ if(GOOGLE_TEST)
     message(STATUS "THE status of the test is ${mahtest}")
     target_link_libraries(mahtest
         ${OTHER_LIB_TEST}
-        # ${BENCH_LIB_TEST}
-        GTest::GTest GTest::Main
-        Qt5::Widgets Qt5::Core Qt5::Gui
-        )
+        ${DISTIMATIC_LIB_TEST}
+        # GTest::GTest GTest::Main
+        #Qt5::Widgets Qt5::Core Qt5::Gui
+
+         )
 
     #3- add the test itself
     add_test(mahtest mahtest
@@ -116,15 +121,17 @@ if(GOOGLE_TEST)
     #1- add the executable files
     add_executable(hahtest
         ${CMAKE_CURRENT_SOURCE_DIR}/mahTest/hahtest.cpp)
-    message(STATUS "THE TYPE OF THE LIBRARY ${BENCHTOP_LIB_TEST} ")
+        message(STATUS "THE TYPE OF THE LIBRARY ${BENCHTOP_LIB_TEST} ")
 
     #2- always do the link between the libraries. Otherwise, the CMake will never be able to define the target
     message(STATUS "THE status of the second test is ${hahtest}")
     target_link_libraries(hahtest
         ${OTHER_LIB_TEST}
-        GTest::GTest GTest::Main
-        Qt5::Widgets Qt5::Core Qt5::Gui
-        )
+        ${DISTIMATIC_LIB_TEST}
+        #GTest::GTest GTest::Main
+        #Qt5::Widgets Qt5::Core Qt5::Gui
+
+         )
 
     #3- add the test itself
     add_test(hahtest hahtest
@@ -134,8 +141,6 @@ if(GOOGLE_TEST)
     #/********************************************//**
     #  ... test 3
     #*************************************************
-
-
 
 
 

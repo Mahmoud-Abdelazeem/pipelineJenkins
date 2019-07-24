@@ -10,6 +10,8 @@ bazel-out
 bazel-testlogs
 *.pyc
 *.tcl
+*.a
+*_autogen
 
 # Visual Studio files
 .vs
@@ -42,7 +44,7 @@ googlemock/fused-src/
 googletest/fused-src/
 
 # Ignore cmake generated directories and files.
-CMakeCache
+CMakeCache.txt
 CMakeFiles
 CTestTestfile.cmake
 Makefile
