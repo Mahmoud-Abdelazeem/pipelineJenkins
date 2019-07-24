@@ -27,6 +27,12 @@ if(GOOGLE_TEST)
     find_package(Threads)
     find_package(GTest REQUIRED)
 
+    # find all Qt Packages
+    find_package(Qt5Core CONFIG REQUIRED)
+
+    # Find the QtWidgets library
+    find_package(Qt5Widgets CONFIG REQUIRED)
+
     #get updated with the messages
     message(STATUS "Threads${Threads}")
     set(GOOGLETEST_VERSION 1.9.0)
@@ -94,6 +100,7 @@ if(GOOGLE_TEST)
         ${OTHER_LIB_TEST}
         # ${BENCH_LIB_TEST}
         GTest::GTest GTest::Main
+        Qt5::Widgets Qt5::Core Qt5::Gui
         )
 
     #3- add the test itself
@@ -115,8 +122,8 @@ if(GOOGLE_TEST)
     message(STATUS "THE status of the second test is ${hahtest}")
     target_link_libraries(hahtest
         ${OTHER_LIB_TEST}
-        # ${BENCH_LIB_TEST}
         GTest::GTest GTest::Main
+        Qt5::Widgets Qt5::Core Qt5::Gui
         )
 
     #3- add the test itself
