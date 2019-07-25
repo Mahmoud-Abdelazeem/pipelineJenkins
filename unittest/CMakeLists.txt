@@ -14,8 +14,7 @@ if(GOOGLE_TEST)
     #here we need to include all of the directories. we will start with the current source directory.
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
     include_directories(${INCLUDE_DIRS})
-    #include_directories(${CMAKE_CURRENT_SOURCE_DIR}/FindGoogleTest/cmake)
-
+    
     # include the other directories that we need to test
     ############################## here #################
 
@@ -65,16 +64,18 @@ if(GOOGLE_TEST)
     #add the used libraray, STATIC Library
     add_library(${DISTIMATIC_LIB_TEST} STATIC ${BENCHTOP_SRC_TEST})
 
+    
     # link between all libraries
     target_link_libraries(${DISTIMATIC_LIB_TEST}
         PUBLIC ${BENCHTOP_LIB_TEST}
         PUBLIC ${OTHER_LIB_TEST}
-        GTest::GTest GTest::Main
         Qt5::Widgets Qt5::Core Qt5::Gui
+        GTest::GTest GTest::Main
         )
 
     target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${CODING_LIB_INCLUDE_DIRS})
-
+    #target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${MY_LIB_TEST})
+    
     # target_include_directories?? ToDo In the future
 
     set (BENCH_TEST_SRC
@@ -128,7 +129,7 @@ if(GOOGLE_TEST)
 
     #3- add the test itself
     add_test(hahtest hahtest)
-    message (STATUS "${hahtest} what is test1")
+    message (STATUS "${hahtest} what is test2")
 
     #/********************************************//**
     #  ... test 3

@@ -1,30 +1,11 @@
 #include <iostream>
-#include <vector>
+#include <QVector>
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-
+#include "/home/mahmoud86/Projects/qtpipeline/checkclass.h"
 
 using namespace std;
 
-class stack {
-    vector<int> vstack = {};
-public:
-    void push (int value) {vstack.push_back(value);}
-
-    int pop () {
-        if (vstack.size()>0) {
-            int value = vstack.back(); // returns reference to the last element of the container. calling back() on an empty container is undefined
-            vstack.pop_back(); // removes the last element of the container. calling pop_back() on an empty container is undefined
-            return value;
-
-        }else {
-            return -1;
-        }
-    }
-    int size() {
-        return vstack.size();
-    }
-};
 
 struct stackTest : public testing::Test  {
     stack s1;
