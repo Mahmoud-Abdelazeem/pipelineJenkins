@@ -37,7 +37,7 @@ pipeline{
           
           post{
             failure{
-                sh "bash ./time_check.sh"
+                bash ./time_check.sh
                 junit "*unittest/test-result.xml"
               }
             }
