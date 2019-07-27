@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <QVector>
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
@@ -7,7 +7,7 @@
 using namespace std;
 
 class stack {
-    vector<int> vstack = {};
+    QVector<int> vstack = {};
 public:
     void push (int value) {vstack.push_back(value);}
 
