@@ -76,6 +76,7 @@ if(GOOGLE_TEST)
     target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${CODING_LIB_INCLUDE_DIRS})
     #target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${MY_LIB_TEST})
     
+    include (finddirectories.cmake)
     # target_include_directories?? ToDo In the future
 
     set (BENCH_TEST_SRC
