@@ -16,5 +16,4 @@ cmake_minimum_required(VERSION 3.10.2)
     target_link_libraries(${MY_LIB_TEST}
         PUBLIC ${BENCHTOP_LIB_TEST}
         PUBLIC ${OTHER_LIB_TEST}
-        PUBLIC ${DISTIMATIC_LIB_TEST}
         )
