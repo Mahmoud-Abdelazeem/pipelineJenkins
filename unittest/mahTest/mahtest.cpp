@@ -2,7 +2,7 @@
 #include <QVector>
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "checkclass.h"
+//#include "checkclass.h"
 
 using namespace std;
 
