@@ -63,7 +63,6 @@ if(GOOGLE_TEST)
 
     #add the used libraray, STATIC Library
     add_library(${DISTIMATIC_LIB_TEST} STATIC ${BENCHTOP_SRC_TEST})
-
     
     # link between all libraries
     target_link_libraries(${DISTIMATIC_LIB_TEST}
@@ -76,7 +75,9 @@ if(GOOGLE_TEST)
     target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${CODING_LIB_INCLUDE_DIRS})
     #target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${MY_LIB_TEST})
     
+    #include directories
     include (finddirectories.cmake)
+
     # target_include_directories?? ToDo In the future
 
     set (BENCH_TEST_SRC
