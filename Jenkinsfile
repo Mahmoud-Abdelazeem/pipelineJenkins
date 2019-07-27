@@ -19,7 +19,7 @@ pipeline{
 	stages{
         stage('Build'){
             steps {
-                
+                sh 'cmake CMakeLists'
             }
         }
 
