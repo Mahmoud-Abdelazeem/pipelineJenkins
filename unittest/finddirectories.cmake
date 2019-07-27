@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.10.2)
         
     include_directories(~/Projects/qtpipeline/)
     message (STATUS "Give me the Link ${LIB_FOLDER}")
-    link_directories (${LIB_FOLDER})
+    #link_directories (${LIB_FOLDER})
     set (MY_LIB_TEST  testlib)
     message(STATUS "What is the LIB_TEST ${MY_LIB_TEST}")
 
