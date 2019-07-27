@@ -105,6 +105,7 @@ if(GOOGLE_TEST)
     target_link_libraries(mahtest
         ${OTHER_LIB_TEST}
         ${DISTIMATIC_LIB_TEST}
+        ${MY_LIB_TEST}
         )
 
     #3- add the test itself
@@ -126,6 +127,7 @@ if(GOOGLE_TEST)
     target_link_libraries(hahtest
         ${OTHER_LIB_TEST}
         ${DISTIMATIC_LIB_TEST}
+        ${MY_LIB_TEST}
         )
 
     #3- add the test itself
