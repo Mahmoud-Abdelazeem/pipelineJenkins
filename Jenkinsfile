@@ -31,7 +31,7 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    sh  " ./run_test.sh"
+                    sh  "bash  ./run_test.sh"
                 }
           }
           
