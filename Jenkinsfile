@@ -24,24 +24,23 @@ pipeline{
             }
         }
 
-        stage('Testing'){
+        stage('UnitTest'){
             when{
                 environment name: 'RUN_TESTS', value: 'true'
             }
             steps{
                 dir("unittest")
                 {
-                    bash  run_test.sh
+                    sh  "bash ./run_test.sh"
                 }
-          }
+            }
           
           post{
             failure{
-                bash ./time_check.sh
-                
+                sh "bash ./time_check.sh"
+                junit "*unittest/test-result.xml"
               }
-            }
-          
+            }     
         }
         
         stage('Analyse'){
@@ -49,7 +48,7 @@ pipeline{
                 environment name: 'RUN_ANALYSIS', value: 'true'
             }
             steps{
-                sh label: '', returnStatus: true, script: 'cppcheck . --xml --force --std=c++14 $WORKSPACE> cppcheck-result.xml'
+                sh label: '', returnStatus: true, script: 'cppcheck . --xml --std=c++14 $WORKSPACE> cppcheck-result.xml'
                 publishCppcheck allowNoReport: true, ignoreBlankFiles: true, pattern: '**/cppcheck-result.xml'
             }
         }
