@@ -2,7 +2,7 @@
 #include <QVector>
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "/home/mahmoud86/Projects/qtpipeline/checkclass.h"
+//#include "checkclass.h"
 
 using namespace std;
 
