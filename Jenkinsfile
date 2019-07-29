@@ -34,7 +34,6 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    def filepath = "~/Projects/qtpipeline"
                     sh  "bash ./run_test.sh"
                 }
             }
