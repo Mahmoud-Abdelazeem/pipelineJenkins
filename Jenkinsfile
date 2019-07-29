@@ -31,7 +31,7 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    load '~/Projects/qtpipeline'
+                    load '=~/Projects/qtpipeline'
                     sh  "bash ./run_test.sh"
                 }
             }
