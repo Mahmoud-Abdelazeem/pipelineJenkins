@@ -10,7 +10,7 @@ cmake_minimum_required(VERSION 3.10.2)
     include_directories(~/Projects/qtpipeline/)
     message (STATUS "Give me the Link ${LIB_FOLDER}")
     # for Jenkins, must be changed 
-    #include_directories(/home/mahmoud86/Projects/qtpipeline)
+    include_directories(/home/mahmoud86/Projects/qtpipeline)
     set (MY_LIB_TEST  testFolder)
     message(STATUS "What is the LIB_TEST ${MY_LIB_TEST}")
 
