@@ -2,7 +2,7 @@
 
 make clean 
 
-export PATH=$PATH:~/Projects/qtpipeline/
+PATH=$PATH:~/Projects/qtpipeline/
 
 cmake -DGOOGLE_TEST=ON
 
