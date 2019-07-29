@@ -14,7 +14,7 @@ if(GOOGLE_TEST)
     #here we need to include all of the directories. we will start with the current source directory.
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
     include_directories(${INCLUDE_DIRS})
-    
+
     # include the other directories that we need to test
     ############################## here #################
 
@@ -73,9 +73,8 @@ if(GOOGLE_TEST)
         )
 
     target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${CODING_LIB_INCLUDE_DIRS})
-    #target_include_directories(${DISTIMATIC_LIB_TEST} PRIVATE ${MY_LIB_TEST})
-    
-    #include directories
+
+    #find all directories
     include (finddirectories.cmake)
 
     # target_include_directories?? ToDo In the future

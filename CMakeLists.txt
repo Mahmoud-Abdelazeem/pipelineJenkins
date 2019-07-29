@@ -17,10 +17,7 @@ set(SOURCES
 # Locate GTest
 find_package(GTest REQUIRED)
 message (STATUS "gTest ${GTEST}")
-INCLUDE_DIRECTORIES(${GTEST_INCLUDE_DIR})
-
-#ADD_CUSTOM_TARGET(link_target ALL
-  # COMMAND ${CMAKE_COMMAND} -E create_symlink ${/home/mahmoud86/symbolicLink})
+include_directories(${GTEST_INCLUDE_DIR})
 
 # Find includes in corresponding build directories
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
