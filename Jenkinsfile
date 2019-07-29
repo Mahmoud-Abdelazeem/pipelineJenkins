@@ -16,7 +16,6 @@ pipeline{
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
 	
-    def filepath = "~/Projects/qtpipeline"
 
 
 	stages{
@@ -35,7 +34,7 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    filepath()
+                    def filepath = "~/Projects/qtpipeline"
                     sh  "bash ./run_test.sh"
                 }
             }
