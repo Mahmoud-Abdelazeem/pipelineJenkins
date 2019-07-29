@@ -30,7 +30,6 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    include '~/Projects/qtpipeline/'
                     sh  "bash ./run_test.sh"
                 }
             }
