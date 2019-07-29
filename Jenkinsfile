@@ -15,6 +15,9 @@ pipeline{
 		booleanParam name: 'RUN_ANALYSIS', defaultValue: true, description: 'Run Static Code Analysis?'
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
+	
+    def filepath = "~/Projects/qtpipeline"
+
 
 	stages{
         stage('Build'){
@@ -27,13 +30,12 @@ pipeline{
         stage('UnitTest'){
             when{
                 environment name: 'RUN_TESTS', value: 'true'
-                def filepath = "~/Projects/qtpipeline"
 
             }
             steps{
                 dir("unittest")
                 {
-                    //filepath()
+                    filepath()
                     sh  "bash ./run_test.sh"
                 }
             }
