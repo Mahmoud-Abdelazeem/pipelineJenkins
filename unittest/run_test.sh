@@ -10,4 +10,3 @@ make
 
 ctest -C Debug
 
-make clean
