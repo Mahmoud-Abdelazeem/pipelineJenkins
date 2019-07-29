@@ -27,11 +27,13 @@ pipeline{
         stage('UnitTest'){
             when{
                 environment name: 'RUN_TESTS', value: 'true'
+                def filepath = "~/Projects/qtpipeline"
+
             }
             steps{
                 dir("unittest")
                 {
-                     '~/Projects/qtpipeline'
+                    filepath
                     sh  "bash ./run_test.sh"
                 }
             }
