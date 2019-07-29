@@ -18,9 +18,10 @@ pipeline{
 
 	stages{
         stage('Build'){
-            steps {
+          steps {
                 cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
-                cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]            }
+                cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]          
+                }
         }
 
         stage('UnitTest'){
@@ -30,6 +31,7 @@ pipeline{
             steps{
                 dir("unittest")
                 {
+                    load '~/Projects/qtpipeline'
                     sh  "bash ./run_test.sh"
                 }
             }
