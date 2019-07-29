@@ -12,6 +12,7 @@ bazel-testlogs
 *.tcl
 *.a
 *_autogen
+*.so
 
 # Visual Studio files
 .vs
