@@ -1,4 +1,5 @@
-evaluate(new File("directories.groovy"))
+evaluate(new File("~/Projects/JenkinsPipeline/pipelineJenkins$ 
+directories.groovy"))
 
 pipeline{
 	agent any
