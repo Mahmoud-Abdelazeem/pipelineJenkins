@@ -1,4 +1,7 @@
+def primethod (){
 
-def fun{
 println "hello world"
 }
+
+return this
+
