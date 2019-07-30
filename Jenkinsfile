@@ -1,3 +1,5 @@
+evaluate(new File("directories.groovy"))
+
 pipeline{
 	agent any
 	
@@ -16,10 +18,6 @@ pipeline{
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
 	
-	l: {
-          def externalMethod = load ("directories.groovy")
-       }
-
 	stages{
         stage('Build'){
           steps {
