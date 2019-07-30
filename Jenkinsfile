@@ -34,8 +34,8 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    sh  'export PATH=$PATH:~/home/mahmoud86/Projects/qtpipeline/'
-
+                    def func = load "directories.groovy"
+                    func.fun()
                     sh  "bash ./run_test.sh"
                 }
             }
