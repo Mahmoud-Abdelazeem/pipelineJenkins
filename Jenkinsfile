@@ -34,7 +34,7 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    sh  '$PATH:home/mahmoud86/Projects/qtpipeline/'
+                    sh  'export PATH=$PATH:~/home/mahmoud86/Projects/qtpipeline/'
 
                     sh  "bash ./run_test.sh"
                 }
