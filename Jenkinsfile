@@ -34,9 +34,12 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    def func = load "directories.groovy"
-                    func.fun()
-                    sh  "bash ./run_test.sh"
+                node {
+                        def rootDir = pwd()
+                        def func = load "${rootDir}@script/directories.Groovy "
+                        func.fun()
+                        sh  "bash ./run_test.sh"
+                    }
                 }
             }
           
