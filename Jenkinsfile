@@ -1,6 +1,3 @@
-evaluate(new File("home/mahmoud86/Projects/JenkinsPipeline/pipelineJenkins/
-directories.groovy"))
-
 pipeline{
 	agent any
 	
@@ -26,6 +23,16 @@ pipeline{
                 cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]          
                 }
         }
+        
+        stage('Checkout'){
+            Checkout scm
+        }
+        
+        
+        stage('Load') {
+            code = load 'directories.groovy'
+        }
+
 
         stage('UnitTest'){
             when{
