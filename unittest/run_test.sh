@@ -2,7 +2,9 @@
 
 make clean 
 
-#PATH=$PATH:~/Projects/qtpipeline/
+PATH=$PATH:~/Projects/qtpipeline/
+
+echo "PATH"
 
 cmake -DGOOGLE_TEST=ON
 
