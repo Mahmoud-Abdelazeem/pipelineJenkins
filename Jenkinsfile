@@ -35,6 +35,8 @@ pipeline{
             steps{
                 dir("unittest")
                 {
+                    sh 'import PATH=$PATH:~/Projects/qtpipeline/'
+
                     sh  "bash ./run_test.sh"
                 }
             }
