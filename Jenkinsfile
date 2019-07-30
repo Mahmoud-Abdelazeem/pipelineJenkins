@@ -34,7 +34,9 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    def externalMethod = load ("directories.groovy")
+                    {
+                        def externalMethod = load ("directories.groovy")
+                    }
                     sh  "bash ./run_test.sh"                     
                 }
             }
