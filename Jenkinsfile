@@ -16,6 +16,12 @@ pipeline{
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
 	
+    def fun
+    node('slave') {
+        pipeline = load 'directories.groovy'
+        pipeline.primethod()
+    }
+	
 	stages{
         stage('Build'){
           steps {
