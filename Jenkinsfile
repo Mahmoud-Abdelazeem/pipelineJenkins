@@ -1,10 +1,3 @@
-def funx
-    node('slave') {
-        funx = load 'directories.groovy'
-        funx.primethod()
-    }
-	
-
 pipeline{
 	agent any
 	
