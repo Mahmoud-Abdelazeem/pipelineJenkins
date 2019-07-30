@@ -16,7 +16,9 @@ pipeline{
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
 	
-	
+	l: {
+          def externalMethod = load ("directories.groovy")
+       }
 
 	stages{
         stage('Build'){
@@ -34,9 +36,7 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                   l: {
-                        def externalMethod = load ("directories.groovy")
-                      }
+                   
                     sh  "bash ./run_test.sh"                     
                 }
             }
