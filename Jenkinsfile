@@ -19,7 +19,7 @@ pipeline{
 	
 	
     
-	stages{
+	//stages{
 	
 	node('slave') {
        def  funx = load 'directories.groovy'
@@ -74,5 +74,5 @@ pipeline{
             }
         }
 	}
-}
+//}
 }
