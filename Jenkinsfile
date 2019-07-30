@@ -1,3 +1,8 @@
+    node('slave') {
+       def  funx = load 'directories.groovy'
+        funx.primethod()
+    }
+
 pipeline{
 	agent any
 	
