@@ -1,8 +1,4 @@
-node('slave') {
-       def  funx = load 'directories.groovy'
-       funx.primethod()
-    }
-[...]
+
 pipeline{
 	agent any
 	
@@ -24,6 +20,12 @@ pipeline{
 	
     
 	stages{
+	
+	node('slave') {
+       def  funx = load 'directories.groovy'
+       funx.primethod()
+    
+
         stage('Build'){
           steps {
                 cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
@@ -72,4 +74,5 @@ pipeline{
             }
         }
 	}
+}
 }
