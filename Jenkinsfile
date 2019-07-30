@@ -1,4 +1,3 @@
-evaluate(new file (../../Projects/qtpipeline/)
 pipeline{
 	agent any
 	
