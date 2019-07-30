@@ -29,19 +29,11 @@ pipeline{
         stage('UnitTest'){
             when{
                     environment name: 'RUN_TESTS', value: 'true'
-
                 }
+                
             steps{
                 dir("unittest")
                 {
-                    node {
-        
-                        def rootDir = pwd()
-                        def func = load "${rootDir}@script/directories.Groovy "
-                        func.primethod()
-	
-                    }
-
                     sh  "bash ./run_test.sh"                     
                 }
             }
