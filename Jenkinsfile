@@ -1,4 +1,4 @@
-evaluate(new File("~/Projects/JenkinsPipeline/pipelineJenkins$ 
+evaluate(new File("~/Projects/JenkinsPipeline/pipelineJenkins/
 directories.groovy"))
 
 pipeline{
