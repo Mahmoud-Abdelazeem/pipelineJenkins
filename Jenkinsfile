@@ -15,7 +15,6 @@ pipeline{
 		booleanParam name: 'RUN_ANALYSIS', defaultValue: true, description: 'Run Static Code Analysis?'
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
-	def code
 	
 	stages{
         stage('Build'){
@@ -31,14 +30,6 @@ pipeline{
                 checkout scm
             }
         }
-        
-        
-        stage('Load') {
-            steps {
-                 code = load 'directories.groovy'
-            }
-        }
-
 
         stage('UnitTest'){
             when{
