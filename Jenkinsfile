@@ -34,7 +34,7 @@ pipeline{
         
         stage('Load') {
             steps {
-                code = load 'directories.groovy'
+                def code = load 'directories.groovy'
             }
         }
 
