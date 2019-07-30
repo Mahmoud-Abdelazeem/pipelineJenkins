@@ -24,13 +24,6 @@ pipeline{
                 }
         }
         
-        stage('Checkout'){
-        
-            steps{
-                checkout scm
-            }
-        }
-
         stage('UnitTest'){
             when{
                     environment name: 'RUN_TESTS', value: 'true'
