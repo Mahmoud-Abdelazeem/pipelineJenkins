@@ -15,18 +15,6 @@ if(GOOGLE_TEST)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
     include_directories(${INCLUDE_DIRS})
 
-    # set a build directory
-    set(dir ${CMAKE_CURRENT_SOURCE_DIR}/BuildCompile/)
-    set(EXECUTABLE_OUTPUT_PATH ${dir} CACHE PATH "Build directory" FORCE)
-    set(LIBRARY_OUTPUT_PATH ${dir} CACHE PATH "Build directory" FORCE)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${dir})
-    set(CMAKE_BUILD_FILES_DIRECTORY ${dir})
-    set(CMAKE_BUILD_DIRECTORY ${dir})
-    set(CMAKE_BINARY_DIR  ${dir})
-    SET(EXECUTABLE_OUTPUT_PATH ${dir})
-    SET(LIBRARY_OUTPUT_PATH ${dir}lib)
-    SET(CMAKE_CACHEFILE_DIR ${dir})
-
     # include the other directories that we need to test
     ############################## here #################
 
