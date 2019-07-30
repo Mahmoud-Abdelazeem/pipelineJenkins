@@ -1,4 +1,4 @@
-evaluate(new file (~/Projects/qtpipeline/checkcalss.h)
+evaluate(new file (~/Projects/qtpipeline/)
 pipeline{
 	agent any
 	
