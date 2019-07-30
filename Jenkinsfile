@@ -15,6 +15,7 @@ pipeline{
 		booleanParam name: 'RUN_ANALYSIS', defaultValue: true, description: 'Run Static Code Analysis?'
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
+	def code
 	
 	stages{
         stage('Build'){
@@ -34,7 +35,7 @@ pipeline{
         
         stage('Load') {
             steps {
-                def code = load 'directories.groovy'
+                 code = load 'directories.groovy'
             }
         }
 
