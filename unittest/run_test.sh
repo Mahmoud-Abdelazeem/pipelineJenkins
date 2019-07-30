@@ -1,6 +1,6 @@
 #!/bin/bash
 
-make clean 
+#make clean 
 
 #PATH=$PATH:~/Projects/qtpipeline/
 
@@ -10,3 +10,4 @@ make
 
 ctest -C Debug
 
+make clean
