@@ -16,6 +16,13 @@ pipeline{
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
 	
+	node {
+        
+        def rootDir = pwd()
+        def func = load "${rootDir}@script/directories.Groovy "
+        func.primethod()
+	
+	}
 
 
 	stages{
@@ -28,17 +35,13 @@ pipeline{
 
         stage('UnitTest'){
             when{
-                environment name: 'RUN_TESTS', value: 'true'
+                    environment name: 'RUN_TESTS', value: 'true'
 
-            }
+                }
             steps{
                 dir("unittest")
                 {
-                    def rootDir = pwd()
-                    def func = load "${rootDir}@script/directories.Groovy "
-                    func.fun()
-                    sh  "bash ./run_test.sh"
-                     
+                    sh  "bash ./run_test.sh"                     
                 }
             }
           
