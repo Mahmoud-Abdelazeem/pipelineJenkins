@@ -25,12 +25,17 @@ pipeline{
         }
         
         stage('Checkout'){
-            checkout scm
+        
+            steps{
+                checkout scm
+            }
         }
         
         
         stage('Load') {
-            code = load 'directories.groovy'
+            steps {
+                code = load 'directories.groovy'
+            }
         }
 
 
