@@ -1,3 +1,10 @@
+def funx
+    node('slave') {
+        funx = load 'directories.groovy'
+        funx.primethod()
+    }
+	
+
 pipeline{
 	agent any
 	
@@ -16,12 +23,7 @@ pipeline{
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
 	
-    def fun
-    node('slave') {
-        pipeline = load 'directories.groovy'
-        pipeline.primethod()
-    }
-	
+    
 	stages{
         stage('Build'){
           steps {
