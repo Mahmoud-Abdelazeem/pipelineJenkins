@@ -1,4 +1,4 @@
-evaluate(new file (~/Projects/qtpipeline/)
+evaluate(new file (../../Projects/qtpipeline/)
 pipeline{
 	agent any
 	
