@@ -34,6 +34,7 @@ pipeline{
             steps{
                 dir("unittest")
                 {
+                    def externalMethod = evaluate readFile("directories.groovy")
                     sh  "bash ./run_test.sh"                     
                 }
             }
