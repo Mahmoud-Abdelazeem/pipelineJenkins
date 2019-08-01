@@ -21,7 +21,6 @@ pipeline{
           stage('Build'){
           steps {
                 sh  "bash ./build_file.sh"  
-                      
                 }
         }
         
