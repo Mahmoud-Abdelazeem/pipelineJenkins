@@ -1,6 +1,6 @@
 #!bin/bash
 
-export PATH=$PATH:~/vcpkg/scripts/buildsystems/
+export PATH=$PATH:home/mahmoud86/vcpkg/scripts/buildsystems/
 
 echo "PATH is: $PATH"
 
