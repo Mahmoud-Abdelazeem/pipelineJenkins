@@ -2,10 +2,10 @@
 #include <QVector>
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-//#include "checkclass.h"
+#include "checkclass.h"
 
 using namespace std;
-
+/*
 class stack {
     QVector<int> vstack = {};
 public:
@@ -24,7 +24,7 @@ public:
     int size() {
         return vstack.size();
     }
-};
+}; */
 
 struct stackTest : public testing::Test  {
     stack s1;
