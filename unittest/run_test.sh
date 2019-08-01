@@ -8,7 +8,7 @@ echo PATH
 
 cmake -DGOOGLE_TEST=ON
 
-make 
+make -j4
 
 ctest -C Debug
 
