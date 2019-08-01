@@ -20,7 +20,7 @@ pipeline{
 	stages{
           stage('Build'){
           steps {
-                sh 'export PATH=$PATH:~/vcpkg/scripts/buildsystems/'
+                sh  "bash ./build_file.sh"  
                 cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
                 cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]          
                 }
