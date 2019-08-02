@@ -69,7 +69,7 @@ pipeline{
                 environment name: 'DEPLOY', value: 'true'
             }
             steps{
-                sh label: '', returnStatus: true, script: '''cp example-pipeline ~
+                sh label: '', returnStatus: true, script: '''cp ~/example-pipeline ~
                 cp unittest/mahTest/mahtest ~'''
             }
         }
