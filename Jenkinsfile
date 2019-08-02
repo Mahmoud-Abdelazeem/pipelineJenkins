@@ -3,7 +3,7 @@ pipeline{
 	agent any
 	
 	environment {
-    PATH = "~/Projects/qtpipeline:$PATH"
+    PATH = "/home/mahmoud86/Projects/qtpipeline:$PATH"
     }
     
 	triggers{ 
