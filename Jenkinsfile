@@ -2,7 +2,7 @@ pipeline{
 	agent any
 	
 	environment {
-    PATH = "home/mahmoud86/Projects/qtpipeline:$PATH"
+    PATH = "~/Projects/qtpipeline:$PATH"
     }
     
 	triggers{ 
@@ -39,6 +39,7 @@ pipeline{
             steps{
                 dir("unittest")
                 {
+                    sh 'export PATH=$PATH:~/Projects/qtpipeline/'
                    
                     sh  "bash ./run_test.sh"                     
                 }
