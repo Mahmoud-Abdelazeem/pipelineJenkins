@@ -4,7 +4,7 @@ make clean
 
 source ~/Projects/qtpipeline/
 
-export PATH=$PATH:~/Projects/qtpipeline/
+export PATH=$PATH:~/Projects/qtpipeline/checkclass.h
 
 echo PATH
 
