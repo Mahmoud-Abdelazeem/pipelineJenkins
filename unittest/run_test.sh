@@ -2,7 +2,7 @@
 
 make clean 
 
-source ~/Projects/qtpipeline/
+source /home/mahmoud86/Projects/qtpipeline/checkclass.h
 
 export PATH=$PATH:home/mahmoud86/Projects/qtpipeline/checkclass.h
 
