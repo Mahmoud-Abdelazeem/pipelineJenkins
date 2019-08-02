@@ -2,14 +2,6 @@
 pipeline{
 	agent any
 	
-	node{
-
-    def common = load directories.groovy”
-
-    common.primethod()
-
-}
-	
 	environment {
     PATH = "/home/mahmoud86/Projects/qtpipeline:$PATH"
     }
