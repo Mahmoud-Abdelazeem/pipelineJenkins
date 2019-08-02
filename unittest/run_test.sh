@@ -2,7 +2,7 @@
 
 make clean 
 
-SET PATH=$PATH:~/Projects/qtpipeline/
+export PATH=$PATH:~/Projects/qtpipeline/
 
 echo PATH
 
