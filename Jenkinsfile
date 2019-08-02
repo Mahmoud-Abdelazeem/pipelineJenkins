@@ -1,6 +1,10 @@
 pipeline{
 	agent any
 	
+	environment {
+    PATH = "~/Projects/qtpipeline:$PATH"
+    }
+    
 	triggers{ 
 	
         pollSCM('H/15 1 * * *')
