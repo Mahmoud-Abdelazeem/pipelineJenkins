@@ -8,7 +8,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD 14)
 
 set(HEADERS
-    )
+   )
 
 set(SOURCES
     main.cpp

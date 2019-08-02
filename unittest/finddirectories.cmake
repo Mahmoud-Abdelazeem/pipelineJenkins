@@ -2,15 +2,13 @@ cmake_minimum_required(VERSION 3.10.2)
 
 
     include_directories(~/Projects/qtpipeline/)
-
+    
     set(LIB_FOLDER
-        ~/Projects/qtpipeline/
+        # here add the path to the required files
        )
         
     link_directories (${LIB_FOLDER})
     message (STATUS "Give me the Link ${LIB_FOLDER}")
-    #include_directories(/home/mahmoud86/Projects/qtpipeline/)
-
     set (MY_LIB_TEST  testFolder)
     message(STATUS "What is the LIB_TEST ${MY_LIB_TEST}")
 
