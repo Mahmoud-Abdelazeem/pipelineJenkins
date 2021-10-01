@@ -15,9 +15,7 @@ pipeline{
 		buildDiscarder(logRotator(numToKeepStr: '10'))
 	}
 	
-	 properties {
-		nextBuildNumber()
-  }
+	
 
 	parameters{
 		booleanParam name: 'RUN_TESTS', defaultValue: true, description: 'Run Tests?'
