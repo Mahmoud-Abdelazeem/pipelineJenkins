@@ -27,7 +27,9 @@ pipeline{
 	stages{
           stage('Build'){
           steps {
-					job()
+					def job = Jenkins.instance.getItem("workFlow")
+					job.nextBuildNumber = 10
+					job.saveNextBuildNumber()
                   
                  echo "PATH is: $PATH"
                 }
@@ -72,7 +74,8 @@ pipeline{
 	}
 }
 
-def job = Jenkins.instance.getItem("test2")
-job.nextBuildNumber = 20
-job.saveNextBuildNumber()
-return this
+// def job = Jenkins.instance.getItem("test2")
+// job.nextBuildNumber = 20
+// job.saveNextBuildNumber()
+ // return this
+ // return this
