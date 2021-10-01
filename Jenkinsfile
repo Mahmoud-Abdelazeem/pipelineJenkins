@@ -26,7 +26,7 @@ pipeline{
           stage('Build'){
           steps {
 					
-                 job()
+                  // job()
                  echo "PATH is: $PATH"
                 }
         }
