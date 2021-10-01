@@ -44,7 +44,7 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    Selected Git installation does not exist. Using Default
+                   echo "Selected Git installation does not exist. Using Default"
                
                 }
             }
