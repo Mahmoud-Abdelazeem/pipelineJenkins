@@ -30,7 +30,7 @@ pipeline{
 	stages{
           stage('Build'){
           steps {
-		  cript{
+		  script{
                     modules.first = load "function.groovy"
                     modules.first.test1()
                     modules.first.test2()
