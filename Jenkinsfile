@@ -29,10 +29,15 @@ pipeline{
 	
 	
 	stages{
+	
+		  stage ('Checkout')
+		    steps{
+				git credentialsId: 'github' url: 'https://github.com/Mahmoud-Abdelazeem/pipelineJenkins'
+		  
+		  }
           stage('Build'){
           steps {
-		  script
-					{ call (Joe)}
+		
 					echo "tre ytee"
 
                   
