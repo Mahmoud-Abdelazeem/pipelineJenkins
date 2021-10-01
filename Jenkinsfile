@@ -1,6 +1,6 @@
 #!groovy
 
-def job
+def job = 11
 pipeline{
 	agent any
 	
