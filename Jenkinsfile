@@ -25,9 +25,7 @@ pipeline{
 	stages{
           stage('Build'){
           steps {
-                 cmake arguments: '-DCMAKE_TOOLCHAIN_FILE=$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake', installation: 'InSearchPath'
-
-                 cmakeBuild buildType: 'Release', cleanBuild: true, installation: 'InSearchPath', steps: [[withCmake: true]]
+                 
                  echo "PATH is: $PATH"
                 }
         }
@@ -40,16 +38,13 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    sh 'export PATH=$PATH:~/Projects/qtpipeline/'
-                   
-                    sh  "bash ./run_test.sh"                     
+                    echo "true true"                 
                 }
             }
           
           post{
             failure{
-                sh "bash ./time_check.sh"
-                junit "*unittest/test-result.xml"
+                echo "true true"  
               }
             }     
         }
@@ -59,8 +54,7 @@ pipeline{
                 environment name: 'RUN_ANALYSIS', value: 'true'
             }
             steps{
-                sh label: '', returnStatus: true, script: 'cppcheck --xml --xml-version=2 --std=c++14 --errorlist> cppcheck-result.xml'
-                publishCppcheck allowNoReport: true, ignoreBlankFiles: true, pattern: '**/cppcheck-result.xml'
+                echo "true true"  
             }
         }
 
@@ -69,8 +63,7 @@ pipeline{
                 environment name: 'DEPLOY', value: 'true'
             }
             steps{
-                sh label: '', returnStatus: true, script: '''cp ~/workspace/example-pipeline ~
-                cp unittest/mahTest/mahtest ~'''
+                echo "true true"  
             }
         }
 	}
