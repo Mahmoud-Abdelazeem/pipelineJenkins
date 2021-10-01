@@ -28,7 +28,7 @@ pipeline{
           stage('Build'){
           steps {
 			script{
-					def job = Jenkins.instance.getItem("test2")
+					//def job = Jenkins.instance.getItem("test2")
 					// job.nextBuildNumber = 70
 					// job.saveNextBuildNumber()
                  } 
