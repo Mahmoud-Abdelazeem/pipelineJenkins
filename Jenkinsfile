@@ -29,7 +29,7 @@ pipeline{
           steps {
 			script{
 					def job = Jenkins.instance.getItem("test2")
-					job.nextBuildNumber = 10
+					job.nextBuildNumber = 70
 					job.saveNextBuildNumber()
                  } 
                  echo "PATH is: $PATH"
