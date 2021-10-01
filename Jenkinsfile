@@ -1,6 +1,7 @@
 #!groovy
 
-def job = 11
+Map modules = [:]
+
 pipeline{
 	agent any
 	
@@ -29,6 +30,11 @@ pipeline{
 	stages{
           stage('Build'){
           steps {
+		  cript{
+                    modules.first = load "function.groovy"
+                    modules.first.test1()
+                    modules.first.test2()
+                }
 					echo "tre ytee"
 
                   
