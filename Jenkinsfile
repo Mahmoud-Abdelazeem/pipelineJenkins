@@ -30,10 +30,11 @@ pipeline{
 	
 	stages{
 	
-		  stage ('Checkout')
+		  stage ('Checkout'){
 		    steps{
 				git credentialsId: 'github' url: 'https://github.com/Mahmoud-Abdelazeem/pipelineJenkins'
 		  
+		  }
 		  }
           stage('Build'){
           steps {
