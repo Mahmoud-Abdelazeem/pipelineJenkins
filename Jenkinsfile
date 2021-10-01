@@ -1,7 +1,8 @@
 #!groovy
 
-def modules
-
+def call(String name = 'human') {
+    echo "Hello, ${name}."
+}
 pipeline{
 	agent any
 	
@@ -30,11 +31,7 @@ pipeline{
 	stages{
           stage('Build'){
           steps {
-		  script{
-                    modules.first = load "function.groovy"
-                    modules.first.test1()
-                    modules.first.test2()
-                }
+					sayHello 'Joe'
 					echo "tre ytee"
 
                   
