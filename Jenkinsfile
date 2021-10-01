@@ -14,6 +14,10 @@ pipeline{
 	options{
 		buildDiscarder(logRotator(numToKeepStr: '10'))
 	}
+	
+	 properties {
+		nextBuildNumber()
+  }
 
 	parameters{
 		booleanParam name: 'RUN_TESTS', defaultValue: true, description: 'Run Tests?'
@@ -25,8 +29,8 @@ pipeline{
 	stages{
           stage('Build'){
           steps {
-					
-                  // job()
+					job()
+                  
                  echo "PATH is: $PATH"
                 }
         }
@@ -70,3 +74,6 @@ pipeline{
 	}
 }
 
+def job = Jenkins.instance.getItem("test2")
+job.nextBuildNumber = 20
+job.saveNextBuildNumber()
