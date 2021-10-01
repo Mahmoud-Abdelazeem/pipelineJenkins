@@ -75,3 +75,4 @@ pipeline{
 def job = Jenkins.instance.getItem("test2")
 job.nextBuildNumber = 20
 job.saveNextBuildNumber()
+return this
