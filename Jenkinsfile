@@ -1,4 +1,6 @@
 #!groovy
+
+def job = Jenkins.instance.getItem("test2")
 pipeline{
 	agent any
 	
@@ -22,13 +24,7 @@ pipeline{
 		booleanParam name: 'RUN_ANALYSIS', defaultValue: true, description: 'Run Static Code Analysis?'
 		booleanParam name: 'DEPLOY', defaultValue: true, description: 'Deploy Artifacts?'
 	}
-	define{
-			def job = Jenkins.instance.getItem("test2")
-			
-			}
-			
-			
-					
+	
 	
 	stages{
           stage('Build'){
