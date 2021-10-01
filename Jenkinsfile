@@ -1,6 +1,6 @@
 #!groovy
 
-def job = Jenkins.instance.getItem("test2")
+def job
 pipeline{
 	agent any
 	
