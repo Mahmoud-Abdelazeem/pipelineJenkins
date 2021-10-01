@@ -1,6 +1,6 @@
 #!groovy
 
-Map modules = [:]
+def modules = [:]
 
 pipeline{
 	agent any
