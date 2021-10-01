@@ -32,7 +32,7 @@ pipeline{
           stage('Build'){
           steps {
 		  script
-					{ sayHello (Joe)}
+					{ call (Joe)}
 					echo "tre ytee"
 
                   
