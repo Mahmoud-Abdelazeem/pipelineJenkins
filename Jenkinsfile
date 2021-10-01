@@ -29,11 +29,9 @@ pipeline{
 	stages{
           stage('Build'){
           steps {
-			
-                 script {
-							job.nextBuildNumber = 70
-							job.saveNextBuildNumber()
-                 } 
+					echo "tre ytee"
+
+                  
 				 }
                 
         }
@@ -46,7 +44,8 @@ pipeline{
             steps{
                 dir("unittest")
                 {
-                    echo "true true"                 
+                    Selected Git installation does not exist. Using Default
+               
                 }
             }
           
