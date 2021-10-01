@@ -31,7 +31,7 @@ pipeline{
 	stages{
           stage('Build'){
           steps {
-					sayHello 'Joe'
+					//sayHello 'Joe'
 					echo "tre ytee"
 
                   
