@@ -1,2 +1,3 @@
 # pipelineJenkins
 pipeline
+check
