@@ -34,7 +34,7 @@ println "i Have found sth ${result}"
 //my_list*.replaceAll(~/ \([0-9]\)$/, "")
 
 
-echo "the result ${result*.replaceAll("[^0-9]", "")}"
+echo "the result ${result.replaceAll("[^0-9]", "")}"
 //paramsDef = job.getProperty(ParametersDefinitionProperty.class)
 //echo "${paramsDef} hellooo Mahomoud"
 
