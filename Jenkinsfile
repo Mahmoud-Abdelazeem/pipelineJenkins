@@ -17,7 +17,7 @@ pipeline {
 
 def returnvalue(){
 def jenkins = Jenkins.getInstance()
-def jobName = "test2"
+def jobName = "increase2"
 String versionType = "minor"
 def job = jenkins.getItem(jobName)
 echo "${job} Hello ya Ro2a"
