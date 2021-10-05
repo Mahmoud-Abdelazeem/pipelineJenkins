@@ -30,11 +30,10 @@ def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
 println "i Have found sth ${result.toString()}"
 
 
-def rx = /(\d+)\result*3/
+def rx = /(\d+)\result/
 def res = result =~ rx
 (0..<res.count).each { println res[it][1] }
 
-result.findAll( /\d+/ )*.toInteger()
 
 echo "${res} this should be 3"
 //echo "the result ${result*.replaceAll("[^0-9]", "")}"
