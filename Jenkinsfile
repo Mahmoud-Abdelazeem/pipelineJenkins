@@ -35,10 +35,8 @@ def res = result =~ rx
 (0..<res.count).each { println res[it][1] }
 
 
-def numbers=result=~/\d/
 
-
-echo "${numbers}"
+echo "${res} this should be 3"
 //echo "the result ${result*.replaceAll("[^0-9]", "")}"
 //paramsDef = job.getProperty(ParametersDefinitionProperty.class)
 //echo "${paramsDef} hellooo Mahomoud"
