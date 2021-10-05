@@ -24,7 +24,7 @@ def jobName = "test2"
 def versionType = "minor"
 File myFile = new File ('C:/Users/SESA637675/.jenkins/workspace/test2/data.hpp').readLines()
 //Get the list of matching lines
-def result = myFile.findAll { it.contains('const char FW_VERSION_3S_STRING[9]') }
+//def result = myFile.findAll { it.contains('const char FW_VERSION_3S_STRING[9]') }
 //println "the result is ${result.toString()}"
 def job = jenkins.getItem(jobName)
 echo "${jobName}"
