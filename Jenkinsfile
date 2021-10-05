@@ -33,7 +33,12 @@ println "i Have found sth ${result.toList()}"
 //echo "${paramsDef} hellooo Mahomoud"
 
     echo "hellooo Mahomoud Farouk"
-    echo "${extractInts(result)}"
+    // a little script to obtain the numbers from a String
+// given a string with number
+def tel = 'ds 48 q4  8q3d4 3q8'
+// extract the numbers
+def nb = tel =~ /[0-9]/
+echo "${nb} hellooo Mahomoud ROOOCOCOC"
   //     if(result.equals(it.name)){
     //       println "Current version is ${it.defaultValue}"
          //  it.defaultValue = getUpdatedVersion(versionType, it.defaultValue)
@@ -42,9 +47,6 @@ println "i Have found sth ${result.toList()}"
        
    }
 
-def extractInts( String input ) {
-  input.findAll( /\d+/ )*.toInteger()
-}
 
 
 //determine the next version by the required type 
