@@ -28,14 +28,6 @@ def result = myFile.findAll { it.contains('const char FW_VERSION_3S_STRING[9]') 
 println result*.toString()
 def job = jenkins.getItem(jobName)
 echo "${jobName}"
-
-//Change log file name in below statement
-def lines = new File('/tmp/test123.txt').readLines()
-//Get the list of matching lines
-def result = lines.findAll { it.contains('FOUND') }
-println result*.toString()
-
-
 //get the current version parameter and update its default value
 paramsDef = job.getProperty(ParametersDefinitionProperty.class)
 echo "${paramsDef} hellooo Mahomoud"
