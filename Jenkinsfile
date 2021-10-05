@@ -21,7 +21,7 @@ pipeline {
 def returnvalue(){
 def jenkins = Jenkins.getInstance()
 def jobName = "increase2"
-String versionType = "data.hpp"
+def versionType =${WORKSPACE}/data.hpp
 File myFile = new File ('versionType').readLines()
 //Get the list of matching lines
 def result = myFile.findAll { it.contains('const char FW_VERSION_3S_STRING[9]') }
