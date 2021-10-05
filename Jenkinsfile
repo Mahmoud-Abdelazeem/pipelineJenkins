@@ -30,7 +30,7 @@ def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
 println "i Have found sth ${result.toString()}"
 
 
-def rx = /(\d+)\*= /
+def rx = /(\d+)\result*= /
 def res = result =~ rx
 (0..<res.count).each { println res[it][1] }
 
