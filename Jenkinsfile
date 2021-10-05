@@ -29,16 +29,12 @@ def lines = new File("${env.WORKSPACE}/data.hpp").readLines()
 def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
 println "i Have found sth ${result}"
 
+echo "${extractIn(result)}"
+
 //paramsDef = job.getProperty(ParametersDefinitionProperty.class)
 //echo "${paramsDef} hellooo Mahomoud"
 
-    echo "hellooo Mahomoud Farouk"
-    // a little script to obtain the numbers from a String
-// given a string with number
-//def tel = 'ds 48 q4  8q3d4 3q8'
-// extract the numbers
-def nb = result =~ /[0-9]/
-echo "${nb} hellooo Mahomoud ROOOCOCOC"
+
   //     if(result.equals(it.name)){
     //       println "Current version is ${it.defaultValue}"
          //  it.defaultValue = getUpdatedVersion(versionType, it.defaultValue)
@@ -47,8 +43,10 @@ echo "${nb} hellooo Mahomoud ROOOCOCOC"
        
    }
 
+def extractInt (string xx) {
 
-
+    return xx.replaceAll("[^0-9]", "")
+}
 //determine the next version by the required type 
 //and incrementing the current version
 
