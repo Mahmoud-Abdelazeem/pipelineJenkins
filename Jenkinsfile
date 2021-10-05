@@ -29,9 +29,12 @@ def lines = new File("${env.WORKSPACE}/data.hpp").readLines()
 def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
 println "i Have found sth ${result.toString()}"
 
-//echo "${extractInt(result)}"
 
-//my_list*.replaceAll(~/ \([0-9]\)$/, "")
+def rx = /(\d+)\result*someWord/
+def res = result =~ rx
+(0..<res.count).each { println res[it][1] }
+
+
 def numbers=result=~/\d/
 
 
