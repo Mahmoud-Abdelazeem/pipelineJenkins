@@ -26,7 +26,7 @@ echo "${job} Hello ya Ro2a"
 //get the current version parameter and update its default value
 
 def lines = new File("${env.WORKSPACE}/data.hpp").readLines()
-def result = lines.findAll { it.contains('= ') }
+def result = lines.findAll { it.contains('= V') }
 println "i Have found sth ${result.toString()}"
 
 
