@@ -38,7 +38,7 @@ sub = { it.split("${result}=")[1] }
 
 //str='wsodk3oke30d30kdl4kof94j93jr94f3kd03k043k?planKey=si23j383&repositoryId=31850514'
 
-echo "${sub} hellooo Mahomoud"
+// echo "${sub} hellooo Mahomoud"
 
 
 echo "${res} this should be 3"
