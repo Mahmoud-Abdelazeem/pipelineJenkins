@@ -33,6 +33,7 @@ println "i Have found sth ${result.toList()}"
 //echo "${paramsDef} hellooo Mahomoud"
 
     echo "hellooo Mahomoud Farouk"
+    echo "${extractInts(result)}"
   //     if(result.equals(it.name)){
     //       println "Current version is ${it.defaultValue}"
          //  it.defaultValue = getUpdatedVersion(versionType, it.defaultValue)
@@ -40,6 +41,10 @@ println "i Have found sth ${result.toList()}"
 //}
        
    }
+
+def extractInts( String input ) {
+  input.findAll( /\d+/ )*.toInteger()
+}
 
 
 //determine the next version by the required type 
