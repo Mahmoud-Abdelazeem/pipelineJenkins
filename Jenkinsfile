@@ -36,10 +36,10 @@ def res = result =~ rx
 
 sub = { it.split("repositoryId=")[1] }
 
-str='wsodk3oke30d30kdl4kof94j93jr94f3kd03k043k?planKey=si23j383&repositoryId=31850514'
+//str='wsodk3oke30d30kdl4kof94j93jr94f3kd03k043k?planKey=si23j383&repositoryId=31850514'
 
 
-assert sub(str) == '31850514'
+assert sub(result)
 echo "${str} hellooo Mahomoud"
 
 
