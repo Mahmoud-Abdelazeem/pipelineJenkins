@@ -29,16 +29,20 @@ def lines = new File("${env.WORKSPACE}/data.hpp").readLines()
 def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
 println "i Have found sth ${result.toString()}"
 
-echo "hellooo Mahomoud Farouk"
-
-       if(${result}.equals(it.name)){
+paramsDef = job.getProperty(ParametersDefinitionProperty.class)
+echo "${paramsDef} hellooo Mahomoud"
+if (paramsDef) {
+    echo "hellooo Mahomoud Farouk"
+   paramsDef.parameterDefinitions.each{
+       if("version".equals(it.name)){
            println "Current version is ${it.defaultValue}"
-          // it.defaultValue = getUpdatedVersion(versionType, it.defaultValue)
-          // println "Next version is ${it.defaultValue}"
+           it.defaultValue = getUpdatedVersion(versionType, it.defaultValue)
+           println "Next version is ${it.defaultValue}"
        }
        
    }
-
+}
+}
 //determine the next version by the required type 
 //and incrementing the current version
 
