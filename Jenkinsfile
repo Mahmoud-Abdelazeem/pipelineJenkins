@@ -27,7 +27,7 @@ echo "${job} Hello ya Ro2a"
 
 def lines = new File('$WORKSPACE/data.hpp').readLines()
 def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
-println " i Have found sth ${result*.toString()}"
+println " i Have found sth ${result.toString()}"
 
 paramsDef = job.getProperty(ParametersDefinitionProperty.class)
 echo "${paramsDef} hellooo Mahomoud"
