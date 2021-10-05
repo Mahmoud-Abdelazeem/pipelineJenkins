@@ -32,9 +32,9 @@ println "i Have found sth ${result.toString()}"
 //echo "${extractInt(result)}"
 
 //my_list*.replaceAll(~/ \([0-9]\)$/, "")
+def res = result.findAll(/\d{1,3}(?:\.\d{1,2})?/)
 
-
-echo "the result ${result.replaceAll("[^0-9]", "")}"
+//echo "the result ${result*.replaceAll("[^0-9]", "")}"
 //paramsDef = job.getProperty(ParametersDefinitionProperty.class)
 //echo "${paramsDef} hellooo Mahomoud"
 
