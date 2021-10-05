@@ -34,7 +34,7 @@ if (paramsDef) {
            it.defaultValue = getUpdatedVersion(versionType, it.defaultValue)
            println "Next version is ${it.defaultValue}"
        }
-       else{println "uffewfewfewfewfew"}
+       
    }
 }
 }
