@@ -25,9 +25,9 @@ echo "${job} Hello ya Ro2a"
 
 //get the current version parameter and update its default value
 
-def lines = new File('$WORKSPACE/data.hpp').readLines()
+def lines = new File("${env.WORKSPACE}/data.hpp").readLines()
 def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
-println " i Have found sth ${result.toString()}"
+println "i Have found sth ${result.toString()}"
 
 paramsDef = job.getProperty(ParametersDefinitionProperty.class)
 echo "${paramsDef} hellooo Mahomoud"
