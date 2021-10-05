@@ -29,7 +29,7 @@ def lines = new File("${env.WORKSPACE}/data.hpp").readLines()
 def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
 println "i Have found sth ${result}"
 
-echo "${extractIn(result)}"
+echo "${extractInt(result)}"
 
 //paramsDef = job.getProperty(ParametersDefinitionProperty.class)
 //echo "${paramsDef} hellooo Mahomoud"
