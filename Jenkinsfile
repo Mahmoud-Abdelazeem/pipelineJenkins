@@ -35,9 +35,9 @@ println "i Have found sth ${result.toList()}"
     echo "hellooo Mahomoud Farouk"
     // a little script to obtain the numbers from a String
 // given a string with number
-def tel = 'ds 48 q4  8q3d4 3q8'
+//def tel = 'ds 48 q4  8q3d4 3q8'
 // extract the numbers
-def nb = tel =~ /[0-9]/
+def nb = result =~ /[0-9]/
 echo "${nb} hellooo Mahomoud ROOOCOCOC"
   //     if(result.equals(it.name)){
     //       println "Current version is ${it.defaultValue}"
