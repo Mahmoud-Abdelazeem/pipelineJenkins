@@ -30,7 +30,7 @@ def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
 println "i Have found sth ${result.toString()}"
 
 echo "hellooo Mahomoud Farouk"
-paramsDef.parameterDefinitions.each{
+
        if(${result}.equals(it.name)){
            println "Current version is ${it.defaultValue}"
           // it.defaultValue = getUpdatedVersion(versionType, it.defaultValue)
