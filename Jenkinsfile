@@ -43,7 +43,7 @@ echo "${extractIn(result)}"
        
    }
 
-def extractInt (string xx) {
+def extractInt (String xx) {
 
     return xx.replaceAll("[^0-9]", "")
 }
