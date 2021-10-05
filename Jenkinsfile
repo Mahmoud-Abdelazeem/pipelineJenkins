@@ -40,7 +40,7 @@ sub = { it.split("FW_VERSION_BUILD =")[1] }
 
 
  sub(result)
-echo "${str} hellooo Mahomoud"
+echo "${sub} hellooo Mahomoud"
 
 
 echo "${res} this should be 3"
