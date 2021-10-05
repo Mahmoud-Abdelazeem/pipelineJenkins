@@ -26,7 +26,7 @@ echo "${job} Hello ya Ro2a"
 //get the current version parameter and update its default value
 
 def lines = new File("${env.WORKSPACE}/data.hpp").readLines()
-def result = lines.findAll { it.contains('FW_VERSION_BUILD') }
+def result = lines.findAll { it.contains('FW_VERSION_3S_STRING') }
 println "i Have found sth ${result.toString()}"
 
 
@@ -35,6 +35,7 @@ def res = result =~ rx
 (0..<res.count).each { println res[it][1] }
 
 echo "${res} this should be 3"
+
 //echo "the result ${result*.replaceAll("[^0-9]", "")}"
 //paramsDef = job.getProperty(ParametersDefinitionProperty.class)
 //echo "${paramsDef} hellooo Mahomoud"
