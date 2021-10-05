@@ -34,6 +34,13 @@ def rx = /(\d+)\result/
 def res = result =~ rx
 (0..<res.count).each { println res[it][1] }
 
+sub = { it.split("repositoryId=")[1] }
+
+str='wsodk3oke30d30kdl4kof94j93jr94f3kd03k043k?planKey=si23j383&repositoryId=31850514'
+
+echo "${str} hellooo Mahomoud"
+assert sub(str) == '31850514'
+
 
 echo "${res} this should be 3"
 //echo "the result ${result*.replaceAll("[^0-9]", "")}"
